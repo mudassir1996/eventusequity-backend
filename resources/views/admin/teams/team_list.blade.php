@@ -27,15 +27,18 @@
                         <a href="{{route('teams.create')}}">
                             <button  class="btn btn-primary btn-sm"> Add New Team</button>
                         </a>
-                        
+
                     </div>
                     <div class="card-body pt-0">
                         <form action="{{route('teams.filter')}}" id="events_form" method="POST">
-                            @csrf 
+                            @csrf
                             <select id="events" name="event_id" class="form-control col-xl-3 col-12">
-                                @foreach ($events as $event)
+                                @forelse ($events as $event)
                                     <option value="{{$event->id}}" {{request()->event_id==$event->id?'selected':''}}>{{$event->event_name}}</option>
-                                @endforeach
+                                    @empty
+                                    <option value="" >No Events Found</option>
+
+                                    @endforelse
                             </select>
                         </form>
                         <div class="transaction-table">
@@ -47,7 +50,7 @@
                                             <th>Name</th>
                                             <th>Event</th>
                                             <th>Created At</th>
-                                            
+
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -55,13 +58,13 @@
                                         @forelse ($teams as $team)
                                         <tr>
                                             <td>
-                                               
+
                                                 <div class="media">
                                                     <span class="justify-content-center">
                                                         <img class="rounded-circle" src="{{Storage::disk('public')->exists('teams/'.$team->team_img)?$image=asset('storage/teams/'.$team->team_img):$image=asset('images/'.$team->team_img)}}"  width="60" height="60" alt="">
                                                     </span>
                                                 </div>
-                                                
+
                                             </td>
                                             <td>
                                                 {{$team->team_name}}
@@ -73,8 +76,8 @@
                                             <td>
                                                 {{$team->created_at}}
                                             </td>
-                                           
-                                           
+
+
                                             <td>
                                                 <a class="round-btn" href="{{route('teams.edit', $team->id)}}"><i class="mdi mdi-pen"></i></a>
                                                 <a class="round-btn" href="#" onclick="delete_row('myForm{{$team->id}}')"><i class="mdi mdi-delete"></i></a>
@@ -83,14 +86,14 @@
                                                     @method('DELETE')
                                                 </form>
                                             </td>
-                                        </tr>  
+                                        </tr>
                                         @empty
                                         <tr>
                                             <td class="text-center" colspan="8">No record</td>
                                         </tr>
                                         @endforelse
-                                      
-                                       
+
+
                                     </tbody>
                                 </table>
                             </div>
