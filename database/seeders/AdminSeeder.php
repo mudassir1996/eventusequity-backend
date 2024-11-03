@@ -23,7 +23,7 @@ class AdminSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' =>   Crypt::encrypt('password'),
             'email_verified_at' => Carbon::now(),
-            'profile_img' => 'placeholder.jpg',
+            'profile_img' => 'user-placeholder.jpg',
             'is_admin' => 1
         ]);
     }
