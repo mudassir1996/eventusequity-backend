@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Storage;
 
 class MyProfile extends Controller
 {
-   
+
     public function index()
     {
         return view('profile.account_profile');
     }
-    
+
     public function update(UpdateClientRequest $request, $id)
     {
         $id=Crypt::decrypt($id);
@@ -35,9 +35,9 @@ class MyProfile extends Controller
             //storing image at public/storage/products/$image_name
             $request->profile_img->storeAs('users', $image_name, 'public');
         } else {
-            $image_name = 'placeholder.jpg';
+            $image_name = 'user-placeholder.jpg';
         }
-        
+
 
 
 
@@ -51,7 +51,7 @@ class MyProfile extends Controller
 
     //    dd($test);
 
-       
+
 
         //setting up success message
         if ($user) {
