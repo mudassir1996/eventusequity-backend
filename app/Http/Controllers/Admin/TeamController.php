@@ -21,7 +21,7 @@ class TeamController extends Controller
     {
         $events = Event::orderBy('event_name', 'asc')->get();
 
-        if ($events) {
+        if (count($events) > 0) {
             $teams = Team::join('events', 'events.id', 'teams.event_id')
                 ->select('teams.*', 'events.event_name')
                 ->where('teams.event_id', $events->first()->id)
