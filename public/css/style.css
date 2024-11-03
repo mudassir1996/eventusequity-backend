@@ -18457,3 +18457,13 @@ select {
     background-color: #F3EBF9;
     height: 100vh;
 }
+
+
+.swal2-modal .swal2-styled+.swal2-styled {
+    margin-top: 0px !important;
+}
+
+
+div:where(.swal2-icon) .swal2-icon-content {
+    font-size: 3.75rem !important;
+}
