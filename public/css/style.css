@@ -18466,4 +18466,5 @@ select {
 
 div:where(.swal2-icon) .swal2-icon-content {
     font-size: 3.75rem !important;
+    font-weight: 400 !important;
 }
