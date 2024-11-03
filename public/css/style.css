@@ -18460,7 +18460,7 @@ select {
 
 
 .swal2-modal .swal2-styled+.swal2-styled {
-    margin-top: 0px !important;
+    margin: 5px !important;
 }
 
 
