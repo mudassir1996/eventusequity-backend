@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Notification;
 
 class FundsController extends Controller
 {
-
+    public $currency_symbol = "£";
 
     public function add_funds(Request $request)
     {
@@ -25,7 +25,7 @@ class FundsController extends Controller
 
             $data = [
                 'amount' => $request->amount,
-                'currency_symbol' => Auth::user()->currency_symbol,
+                'currency_symbol' => $this->currency_symbol,
                 'email' => Auth::user()->email,
                 'full_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
             ];
@@ -63,7 +63,7 @@ class FundsController extends Controller
             $data = [
                 'amount' => $request->amount,
                 'reason' => $request->reason,
-                'currency_symbol' => Auth::user()->currency_symbol,
+                'currency_symbol' => $this->currency_symbol,
                 'email' => Auth::user()->email,
                 'full_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
             ];

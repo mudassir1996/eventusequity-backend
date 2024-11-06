@@ -89,7 +89,7 @@
                                         @else
                                             <p
                                                 style="color:#455056;line-height:24px; margin:20px auto; font-weight: 500; text-align:center">
-                                                Your wthdrawal of <strong>{{$transaction_data['currency_symbol']." ". number_format($transaction_data['transaction_amount'], 2) }}</strong> has been initiated with {{ env('APP_NAME') }}. It will now be passed to your Account Manager {{env('ACCOUNT_MANAGER')}}.
+                                                Your withdrawal of <strong>{{$transaction_data['currency_symbol']." ". number_format($transaction_data['transaction_amount'], 2) }}</strong> has been initiated with {{ env('APP_NAME') }}. It will now be passed to your Account Manager.
                                                 If you have any questions, we're always happy to help out, just email us.
                                             </p>
                                         @endif

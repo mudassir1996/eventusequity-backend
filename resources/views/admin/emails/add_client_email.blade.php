@@ -85,7 +85,7 @@
                                         <p
                                             style="color:#455056;line-height:20px; margin:0; font-weight: 500; text-align:center">
                                             <strong
-                                                style="display: block; font-size: 14px; margin: 0 0 10px; color:rgba(0,0,0,.64); font-weight:normal;"></strong>Your savings account is now setup and ready to use<strong
+                                                style="display: block; font-size: 14px; margin: 0 0 10px; color:rgba(0,0,0,.64); font-weight:normal;"></strong>Your trading account is now setup and ready to use<strong
                                                 style="display: block; font-size: 14px; margin: 24px 0 4px 0; font-weight:bold; color:{{config('email_template.primary_color')}}">Email</strong><span
                                                 style="text-decoation:none;">{{$client['email']}}</span>
                                             <strong

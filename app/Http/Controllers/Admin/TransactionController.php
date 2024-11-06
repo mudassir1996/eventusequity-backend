@@ -16,6 +16,7 @@ use Symfony\Component\Console\Input\Input;
 
 class TransactionController extends Controller
 {
+    public $currency_symbol = "£";
     /**
      * Display a listing of the resource.
      *
@@ -80,7 +81,7 @@ class TransactionController extends Controller
                 'full_name' => $client->first_name . ' ' . $client->last_name,
                 'transaction_type' => $transaction->transaction_type,
                 'transaction_amount' => $transaction->transaction_amount,
-                'currency_symbol' => Auth::user()->currency_symbol,
+                'currency_symbol' => $this->currency_symbol,
 
             ];
             // dd($client_data);
