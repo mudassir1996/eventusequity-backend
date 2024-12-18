@@ -1,4 +1,92 @@
 @extends('layouts.app')
+@section('styles')
+    <style>
+        .c-table h1 {
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: 600 !important;
+        }
+
+        .c-table table {
+            border-spacing: 0 6px !important;
+        }
+
+        .c-table table tr td:first-child,
+        table tr th:first-child {
+            border-radius: 0px !important;
+        }
+
+        .c-table table thead th {
+            border: 0px !important;
+        }
+
+        .c-table p {
+            font-size: 14px;
+        }
+
+        .compare-table th {
+            color: black;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+        }
+
+        .compare-table td {
+            font-size: 14px;
+        }
+
+        .card {
+            border: 0px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: -1px 0px 20px 0px rgba(55, 55, 89, 0.08);
+            background: #fff;
+        }
+    </style>
+    <style>
+        .c-table h1 {
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: 600 !important;
+        }
+
+        .c-table table {
+            border-spacing: 0 6px !important;
+        }
+
+        .c-table table tr td:first-child,
+        table tr th:first-child {
+            border-radius: 0px !important;
+        }
+
+        .c-table table thead th {
+            border: 0px !important;
+        }
+
+        .c-table p {
+            font-size: 14px;
+        }
+
+        .compare-table th {
+            color: black;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+        }
+
+        .compare-table td {
+            font-size: 14px;
+        }
+
+        /* .card {
+            border: 0px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: -1px 0px 20px 0px rgba(55, 55, 89, 0.08);
+            background: #fff;
+        } */
+    </style>
+@endsection
 @section('content')
     @include('layouts.partials.header')
     @include('layouts.partials.sidebar')
@@ -8,8 +96,9 @@
             <div class="row align-items-center">
                 <div class="col-xl-6">
                     <div class="page_title-content">
-                        <p>Welcome Back,
-                            <span>{{ ucwords(strtolower(Auth::user()->first_name)) }}</span>
+                        <p>
+                            <span>{{ ucwords(strtolower(Auth::user()->first_name)) }}
+                                {{ ucwords(strtolower(Auth::user()->last_name)) }}</span>
                         </p>
                     </div>
                 </div>
@@ -85,6 +174,170 @@
                 </div>
                 <div class="col-xl-12">
                     <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card ">
+                                 <div class="card-header border-0">
+                                    <h4 class="card-title">How the Funds Compare?</h4>
+                                </div>
+                                <section class="c-table">
+                                    <div class="container-fluid">
+                                        {{-- <h1 class="text-start">How the Funds Compare?</h1> --}}
+                                        <p class="text-start">
+                                            No matter what your goals are, we have a fund that will help you reach them. Our
+                                            team of experts
+                                            will help you choose the fund that's right for you, and our online tools make
+                                            managing your account
+                                            easy.
+                                        </p>
+                                        <div class="table-responsive">
+                                            <table class="table compare-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"></th>
+                                                        <th scope="col">Premier League</th>
+                                                        <th scope="col">Champions League</th>
+                                                        <th scope="col">World Cup</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Hands Off</i>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>24/7 Support</i>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Flexible Term</i>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Regulated Brokerage</i>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                        <td>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                height="20" fill="#40165d" class="bi bi-check"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                            </svg>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Monthly Interest</i>
+                                                        </td>
+                                                        <td>
+                                                            2% Guaranteed
+                                                        </td>
+                                                        <td>
+                                                            2% - 6% *
+                                                        </td>
+                                                        <td>
+                                                            6%+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Minimum Investment</td>
+                                                        <td>
+                                                            £10.00
+                                                        </td>
+                                                        <td>
+                                                            £5,000.00
+                                                        </td>
+                                                        <td>
+                                                            £50,000.00
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </section>
+                            </div>
+                        </div>
                         @if (!$trades->isEmpty())
                             <div class="col-xl-12">
                                 <div class="card">
@@ -834,8 +1087,7 @@
 
 @endsection
 @section('scripts')
-    <script type="module" src="https://widgets.api-sports.io/football/1.1.8/widget.js">
-    </script>
+    <script type="module" src="https://widgets.api-sports.io/football/1.1.8/widget.js"></script>
     <script>
         $(function() {
             $('.notes-popover').popover({
