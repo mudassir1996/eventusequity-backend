@@ -43,10 +43,9 @@ class EventController extends Controller
         if ($request->hasFile('event_img')) {
             //getting the image name
             $image_full_name = $request->event_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
-
-            //storing image at public/storage/products/$image_name
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
             $request->event_img->storeAs('events', $image_name, 'public');
         } else {
             $image_name = 'placeholder.jpg';
@@ -118,12 +117,13 @@ class EventController extends Controller
 
             //deleting the previous Image
             Storage::disk('public')->delete('events/' . $event->event_img);
+
             //getting the image name
             $image_full_name = $request->event_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
 
-            //storing image at public/storage/products/$image_name
             $request->event_img->storeAs('events', $image_name, 'public');
         } else {
             $image_name = $event->event_img;

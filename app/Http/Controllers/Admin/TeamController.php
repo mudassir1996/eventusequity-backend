@@ -73,8 +73,9 @@ class TeamController extends Controller
         if ($request->hasFile('team_img')) {
             //getting the image name
             $image_full_name = $request->team_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
 
             //storing image at public/storage/products/$image_name
             $request->team_img->storeAs('teams', $image_name, 'public');
@@ -147,8 +148,9 @@ class TeamController extends Controller
             Storage::disk('public')->delete('teams/' . $team->team_img);
             //getting the image name
             $image_full_name = $request->team_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
 
             //storing image at public/storage/products/$image_name
             $request->team_img->storeAs('teams', $image_name, 'public');

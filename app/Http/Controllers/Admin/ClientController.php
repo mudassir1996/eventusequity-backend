@@ -52,8 +52,9 @@ class ClientController extends Controller
         if ($request->hasFile('profile_img')) {
             //getting the image name
             $image_full_name = $request->profile_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
 
             //storing image at public/storage/products/$image_name
             $request->profile_img->storeAs('users', $image_name, 'public');
@@ -217,8 +218,9 @@ class ClientController extends Controller
             Storage::disk('public')->delete('users/' . $client->profile_img);
             //getting the image name
             $image_full_name = $request->profile_img->getClientOriginalName();
-            $image_name_arr = explode('.', $image_full_name);
-            $image_name = $image_name_arr[0] . time() . '.' . $image_name_arr[1];
+            $filename = pathinfo($image_full_name, PATHINFO_FILENAME);
+            $extension = pathinfo($image_full_name, PATHINFO_EXTENSION);
+            $image_name = $filename . time() . '.' . $extension;
 
             //storing image at public/storage/products/$image_name
             $request->profile_img->storeAs('users', $image_name, 'public');
