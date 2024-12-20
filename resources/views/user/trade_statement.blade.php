@@ -177,18 +177,18 @@
                         <div class="col-xl-12">
                             <div class="card ">
                                  <div class="card-header border-0">
-                                    <h4 class="card-title">How the Funds Compare?</h4>
+                                    <h4 class="card-title">Our Funds</h4>
                                 </div>
                                 <section class="c-table">
                                     <div class="container-fluid">
                                         {{-- <h1 class="text-start">How the Funds Compare?</h1> --}}
-                                        <p class="text-start">
+                                        {{-- <p class="text-start">
                                             No matter what your goals are, we have a fund that will help you reach them. Our
                                             team of experts
                                             will help you choose the fund that's right for you, and our online tools make
                                             managing your account
                                             easy.
-                                        </p>
+                                        </p> --}}
                                         <div class="table-responsive">
                                             <table class="table compare-table">
                                                 <thead>
